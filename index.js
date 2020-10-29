@@ -14,7 +14,7 @@ import {
   COLOR,
 } from "./types";
 
-module.exports = {
+export {
   ColorPicker,
   RGBA,
   HSVA,

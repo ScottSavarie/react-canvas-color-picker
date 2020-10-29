@@ -1,6 +1,6 @@
 {
   "name": "react-canvas-color-picker",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Simple and customizable canvas color picker built in React + TS",
   "dependencies": {
     "@types/node": "14.0.1",
