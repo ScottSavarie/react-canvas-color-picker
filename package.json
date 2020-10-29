@@ -26,11 +26,11 @@
   "devDependencies": {
     "@types/react": "16.9.19",
     "@types/react-dom": "16.9.5",
-    "typescript": "3.7.5",
-    "typescript-plugin-css-modules": "^2.7.0"
+    "typed-css-modules": "^0.6.4",
+    "typescript": "3.7.5"
   },
   "scripts": {
-    "build": "tsc",
+    "build": "tcm -o dist src && tsc",
     "prepare": "npm run build"
   },
   "browserslist": [
