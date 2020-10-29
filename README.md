@@ -49,7 +49,7 @@ function App() {
 | ----------------- | -------- | ------------------------------------------ | ---------------------------------- | ----------------------------------------------------- |
 | `initialColor`    | no       | `RGBA`, `HSLA`, `HSVA`, `HEX`, `CSS Color` | `{ r: 255, g: 255, b: 255, a: 1 }` | Color the color picker will mount with                |
 | `formats`         | no       | `COLOR_FORMATS[]` ex: `["rgba", hsla"]`    | `["rgba"]`                         | Array of color formats sent in callback functions     |
-| `spectrum`        | no       | `hsva` or `hsla`                          | `hsva`                             | Specify which color spectrum to use                   |
+| `spectrum`        | no       | `"hsva"` or `"hsla"`                       | `hsva`                             | Specify which color spectrum to use                   |
 | `spectrumWidth`   | no       | `number`                                   | `240`                              | Sets width of color box and sliders                   |
 | `spectrumHeight`  | no       | `number`                                   | `240`                              | Sets height of color box                              |
 | `sliderHeight`    | no       | `number`                                   | `14`                               | Sets height of hue and alpha sliders                  |
