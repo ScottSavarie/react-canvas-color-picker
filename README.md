@@ -27,3 +27,5 @@ function App() {
 }
 
 ```
+
+For a more complete example see: https://codesandbox.io/s/react-canvas-color-picker-q4heh?file=/src/App.tsx:1280-1429
