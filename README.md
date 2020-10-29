@@ -26,7 +26,7 @@ function App() {
   const formats = useRef(["rgba"]);
    
   const handleChange = useCallback(({ colors }) => {
-    setColor((state) => ({ ...state, ...colors.rgba }));
+    setColor({ ...colors.rgba });
   }, []);
 
   
