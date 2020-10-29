@@ -17,6 +17,11 @@
     "allowSyntheticDefaultImports": true,
     "skipLibCheck": true,
     "moduleResolution": "node",
+    "plugins": [
+      {
+        "name": "typescript-plugin-css-modules"
+      }
+    ]
   },
   "include": [
     "src/**/*"
