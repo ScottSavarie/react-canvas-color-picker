@@ -1,0 +1,25 @@
+.container {
+  display: grid;
+  gap: 1em;
+  justify-items: center;
+}
+
+.color_picker {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+/* expand hit area */
+.color_picker:before {
+  content: "";
+  position: absolute;
+  top: -0.5em;
+  left: -0.5em;
+  width: calc(100% + 1em);
+  height: calc(100% + 1em);
+  background: transparent;
+}
