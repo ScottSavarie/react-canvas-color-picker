@@ -1,8 +1,11 @@
 {
   "name": "react-canvas-color-picker",
   "version": "1.0.6",
-  "main": "./lib/index.js",
-  "types": "./lib/index.d.js",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "/dist"
+  ],
   "description": "Simple and customizable canvas color picker built in React + TS",
   "keywords": [
     "color",
@@ -26,11 +29,8 @@
     "typescript": "3.7.5"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
-    "generate-types": "tsc"
+    "build": "tsc",
+    "prepare": "npm run build"
   },
   "browserslist": [
     ">0.2%",
