@@ -1,4 +1,18 @@
+# React Canvas Color Picker
+Simple, fast, customizable canvas based color picker built in React. Supports `HSLA`, `HSVA` color spectrums, and `hsla`, `hsva`, `rgba`, `hex`, and `hex8` color formats.
+
+
 ## Basic Usage
+
+
+```
+yarn add react-canvas-color-picker
+
+or
+
+npm i react-canvas-color-picker
+
+```
 
 ```
 import React, { useState, useRef, useCallback } from "react";
@@ -28,4 +42,27 @@ function App() {
 
 ```
 
-For a more complete example see: https://codesandbox.io/s/react-canvas-color-picker-q4heh?file=/src/App.tsx:1280-1429
+## Props
+
+Prop | Required | Type | Default | Description
+---- | -------- | ---- | ------- | -----------
+`initialColor` | no | `RGBA`, `HSLA`, `HSVA`, `HEX`, `CSS Color` | `{ r: 255, g: 255, b: 255, a: 1 }` | Color the color picker will mount with
+`formats` | no | `COLOR_FORMATS[]` ex: `["rgba", hsla"]` | `["rgba"]` | Array of color formats sent in callback functions
+`spectrum` | no | `hsva | hsla` | `hsva` | Specify which color spectrum to use
+`spectrumWidth` | no | `number` | `240` | Sets width of color box and sliders
+`spectrumHeight` | no | `number` | `240` | Sets height of color box
+`sliderHeight` | no | `number` | `14` | Sets height of hue and alpha sliders
+`className` | no | `string` | `undefined` | Additional classes for parent container
+`spectrumClasses` | no | `string` | `undefined` | Additional classes for hsla / hsva spectrum container
+`hueClasses` | no | `string` | `undefined` | Additional classes for hue slider container
+`alphaClasses` | no | `string` | `undefined` | Additional classes for alpha slider container
+`handleClasses` | no | `string` | `undefined` | Additional classes for slider and spectrum handles
+`onPanStart` | no | `(event: colorPickerChangeEvent) => void` | `undefined` | Callback function when pan starts
+`onPan` | no | `(event: colorPickerChangeEvent) => void` | `undefined` | Callback function on pan
+`onPanEnd` | no | `(event: colorPickerChangeEvent) => void` | `undefined` | Callback function when pan ends
+
+
+
+## Advanced Usage
+
+See: https://codesandbox.io/s/react-canvas-color-picker-q4heh?file=/src/App.tsx:1280-1429
