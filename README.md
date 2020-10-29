@@ -4,16 +4,19 @@
 
 Simple, fast, customizable canvas based color picker built in React. Supports `HSLA`, `HSVA` color spectrums, and `hsla`, `hsva`, `rgba`, `hex`, and `hex8` color formats.
 
-## Basic Usage
+## Install
+### npm
+```
+npm install react-canvas-color-picker
+```
 
+### yarn
 ```
 yarn add react-canvas-color-picker
-
-or
-
-npm i react-canvas-color-picker
-
 ```
+
+
+## Basic Usage
 
 ```
 import React, { useState, useRef, useCallback } from "react";
