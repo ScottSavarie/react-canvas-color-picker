@@ -1,5 +1,5 @@
 import { HSVA, HSLA, COLOR_FORMATS, COLORS } from "../types";
-const tinycolor = require("tinycolor2");
+import tinycolor from "tinycolor2";
 
 export default function getColorFormats(
   color: HSVA | HSLA,

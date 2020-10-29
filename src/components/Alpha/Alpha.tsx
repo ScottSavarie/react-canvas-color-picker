@@ -13,9 +13,9 @@ const baseStyles = require("../ColorPicker/ColorPicker.module.css");
 type AlphaProps = {
   hue: number;
   saturation: number;
-  lightness: number;
+  lightness?: number;
   spectrum: string;
-  value: number;
+  value?: number;
   alpha: number;
   width: number;
   height: number;
@@ -48,14 +48,14 @@ function Alpha(props: AlphaProps) {
       ? {
           h: hue,
           s: saturation,
-          l: lightness,
+          l: lightness || 0,
           a: 1,
         }
       : (formatColorBySpectrum(
           {
             h: hue,
             s: saturation,
-            v: value,
+            v: value || 0,
             a: 1,
           },
           "hsla"
