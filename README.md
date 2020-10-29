@@ -61,6 +61,16 @@ Prop | Required | Type | Default | Description
 `onPan` | no | `(event: colorPickerChangeEvent) => void` | `undefined` | Callback function on pan
 `onPanEnd` | no | `(event: colorPickerChangeEvent) => void` | `undefined` | Callback function when pan ends
 
+## Change Events
+`onPanStart`, `onPan`, and `onPanEnd` all return an object containing the colors specified in the `formats` prop, and the `id` of the spectrum or slider that was panned with. 
+
+```
+{
+  colors: object;
+  canvasId: string;
+}
+```
+
 
 
 ## Advanced Usage
