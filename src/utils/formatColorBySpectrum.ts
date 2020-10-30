@@ -1,9 +1,9 @@
-import { COLOR, HSLA_FORMAT, HSVA_FORMAT, HSLA, HSVA } from "../types";
+import { Color, HSLAFormat, HSVAFormat, HSLA, HSVA } from "../types";
 import tinycolor from "tinycolor2";
 
 export default function formatColorBySpectrum(
-  color: COLOR,
-  spectrum: HSLA_FORMAT | HSVA_FORMAT
+  color: Color,
+  spectrum: HSLAFormat | HSVAFormat
 ): HSLA | HSVA {
   const newColor =
     spectrum === "hsva" ? tinycolor(color).toHsv() : tinycolor(color).toHsl();

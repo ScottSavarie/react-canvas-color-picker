@@ -3,14 +3,14 @@ import * as React from "react";
 import Handle from "../Handle/Handle";
 
 import { mapRange } from "../../utils";
-import { HSVA_FORMAT, HSLA_FORMAT } from "../../types";
+import { HSVAFormat, HSLAFormat } from "../../types";
 import { COLOR_PICKER_CLASSNAME } from "../../constants";
 
 import styles from "./Spectrum.module.css";
 import baseStyles from "../ColorPicker/ColorPicker.module.css";
 
 type ColorBoxProps = {
-  spectrumFormat: HSVA_FORMAT | HSLA_FORMAT;
+  spectrumFormat: HSVAFormat | HSLAFormat;
   hue: number;
   saturation: number;
   value?: number;

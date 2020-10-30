@@ -1,8 +1,8 @@
-import { PAN_EVENT, HSLA, HSVA } from "../types/index";
+import { PanEvent, HSLA, HSVA } from "../types/index";
 import { calculateChanges } from "./index";
 
 export default function getColorChange(
-  event: PAN_EVENT,
+  event: PanEvent,
   currentColor: HSLA | HSVA
 ) {
   const changes = calculateChanges(event);

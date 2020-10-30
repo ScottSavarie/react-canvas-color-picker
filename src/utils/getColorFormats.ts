@@ -1,10 +1,10 @@
-import { HSVA, HSLA, COLOR_FORMATS, COLORS } from "../types";
+import { HSVA, HSLA, ColorFormats, Colors } from "../types";
 import tinycolor from "tinycolor2";
 
 export default function getColorFormats(
   color: HSVA | HSLA,
-  formats: COLOR_FORMATS[]
-): COLORS {
+  formats: ColorFormats[]
+): Colors {
   const formatsLength = formats.length;
   let colors = {};
 

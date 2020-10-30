@@ -22,11 +22,11 @@ yarn add react-canvas-color-picker
 
 ```
 import React, { useState, useRef, useCallback } from "react";
-import { ColorPicker, COLOR_FORMATS } from "react-canvas-color-picker";
+import { ColorPicker, ColorFormats } from "react-canvas-color-picker";
 
 export default function App() {
   const [color, setColor] = useState({ r: 255, g: 255, b: 255, a: 1 });
-  const formats = useRef<COLOR_FORMATS[]>(["rgba"]);
+  const formats = useRef<ColorFormats[]>(["rgba"]);
 
   const handleChange = useCallback(({ colors }) => {
     setColor({ ...colors.rgba });
@@ -49,7 +49,7 @@ export default function App() {
 | Prop              | Required | Type                                       | Default                            | Description                                           |
 | ----------------- | -------- | ------------------------------------------ | ---------------------------------- | ----------------------------------------------------- |
 | `initialColor`    | no       | `RGBA`, `HSLA`, `HSVA`, `HEX`, `CSS Color` | `{ r: 255, g: 255, b: 255, a: 1 }` | Color the color picker will mount with                |
-| `formats`         | no       | `COLOR_FORMATS[]` ex: `["rgba", hsla"]`    | `["rgba"]`                         | Array of color formats sent in callback functions     |
+| `formats`         | no       | `ColorFormats[]` ex: `["rgba", hsla"]`     | `["rgba"]`                         | Array of color formats sent in callback functions     |
 | `spectrum`        | no       | `"hsva"` or `"hsla"`                       | `hsva`                             | Specify which color spectrum to use                   |
 | `spectrumWidth`   | no       | `number`                                   | `240`                              | Sets width of color box and sliders                   |
 | `spectrumHeight`  | no       | `number`                                   | `240`                              | Sets height of color box                              |
@@ -80,10 +80,10 @@ Sometimes you'll want to set the color of the color picker after it's been mount
 
 ```
 import React, { useRef } from "react";
-import { ColorPicker, SET_COLOR } from "react-canvas-color-picker";
+import { ColorPicker, SetColor } from "react-canvas-color-picker";
 
 export default function App() {
-  const colorPickerRef = useRef<SET_COLOR>();
+  const colorPickerRef = useRef<SetColor>();
 
   const setRandomColor = () => {
     const newColor = {

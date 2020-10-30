@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import { HSLA_FORMAT, HSVA_FORMAT, HSLA } from "../../types";
+import { HSLAFormat, HSVAFormat, HSLA } from "../../types";
 
 import { formatColorBySpectrum } from "../../utils";
 
@@ -10,7 +10,7 @@ type HandleProps = {
   x: number;
   y: number;
   hue: number;
-  spectrumFormat?: HSLA_FORMAT | HSVA_FORMAT;
+  spectrumFormat?: HSLAFormat | HSVAFormat;
   saturation?: number;
   lightness?: number;
   value?: number;

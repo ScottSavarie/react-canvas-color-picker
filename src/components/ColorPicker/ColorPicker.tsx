@@ -15,27 +15,27 @@ import {
 } from "../../utils/index";
 
 import {
-  HSVA_FORMAT,
-  HSLA_FORMAT,
+  HSVAFormat,
+  HSLAFormat,
   HSLA,
   HSVA,
-  COLOR,
-  COLOR_FORMATS,
-  SPECTRUM,
-  COLORS,
+  Color,
+  ColorFormats,
+  Spectrum,
+  Colors,
 } from "../../types/index";
 
 import styles from "./ColorPicker.module.css";
 
 type colorPickerChangeEvent = {
-  colors: COLORS;
+  colors: Colors;
   canvasId: string;
 };
 
 type ColorPickerProps = {
-  initialColor?: COLOR; // Color the color picker will mount with - Default white
-  formats?: COLOR_FORMATS[]; // Array of color formats sent in callback functions. note: use state or memoized array to avoid rerenders
-  spectrum?: HSVA_FORMAT | HSLA_FORMAT; // Specify which color spectrum to use - default HSVA
+  initialColor?: Color; // Color the color picker will mount with - Default white
+  formats?: ColorFormats[]; // Array of color formats sent in callback functions. note: use state or memoized array to avoid rerenders
+  spectrum?: HSVAFormat | HSLAFormat; // Specify which color spectrum to use - default HSVA
   spectrumWidth?: number; // Sets width of color box and sliders - default 240
   spectrumHeight?: number; // Sets height of color box - default 240
   sliderWidth?: number; // Sets width of hue and alpha sliders - default 240
@@ -50,7 +50,7 @@ type ColorPickerProps = {
   onPanEnd?: (event: colorPickerChangeEvent) => void; // Callback function - Note: useCallback to avoid rerenders
 };
 
-const defaultFormats = ["rgba"] as COLOR_FORMATS[];
+const defaultFormats = ["rgba"] as ColorFormats[];
 const defaultColor = { r: 255, g: 255, b: 255, a: 1 };
 
 const ColorPicker = React.forwardRef((props: ColorPickerProps, ref) => {
@@ -72,7 +72,7 @@ const ColorPicker = React.forwardRef((props: ColorPickerProps, ref) => {
     onPanEnd,
   } = props;
 
-  const [color, setColor] = React.useState<SPECTRUM>(() => {
+  const [color, setColor] = React.useState<Spectrum>(() => {
     return formatColorBySpectrum(initialColor, spectrum);
   });
 
@@ -156,7 +156,7 @@ const ColorPicker = React.forwardRef((props: ColorPickerProps, ref) => {
   React.useEffect(() => {
     setColor((state) => {
       if (typeof spectrum !== "undefined") {
-        return formatColorBySpectrum(state as COLOR, spectrum);
+        return formatColorBySpectrum(state as Color, spectrum);
       }
       return state;
     });
@@ -173,7 +173,7 @@ const ColorPicker = React.forwardRef((props: ColorPickerProps, ref) => {
 
   // Imperative handler to externally set the color after mount
   React.useImperativeHandle(ref, () => ({
-    setColor: (col: COLOR) => {
+    setColor: (col: Color) => {
       setColor(formatColorBySpectrum(col, spectrum));
     },
   }));
