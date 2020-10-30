@@ -12,6 +12,7 @@ import {
   COLOR_FORMATS,
   COLORS,
   COLOR,
+  SET_COLOR,
 } from "./types";
 
 export {
@@ -28,4 +29,5 @@ export {
   COLOR_FORMATS,
   COLORS,
   COLOR,
+  SET_COLOR,
 };

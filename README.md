@@ -5,45 +5,43 @@
 Simple, fast, customizable canvas based color picker built in React. Supports `HSLA`, `HSVA` color spectrums, and `hsla`, `hsva`, `rgba`, `hex`, and `hex8` color formats.
 
 ## Install
+
 ### npm
+
 ```
 npm install react-canvas-color-picker
 ```
 
 ### yarn
+
 ```
 yarn add react-canvas-color-picker
 ```
-
 
 ## Basic Usage
 
 ```
 import React, { useState, useRef, useCallback } from "react";
-import { ColorPicker } from "react-canvas-color-picker";
+import { ColorPicker, COLOR_FORMATS } from "react-canvas-color-picker";
 
-
-function App() {
+export default function App() {
   const [color, setColor] = useState({ r: 255, g: 255, b: 255, a: 1 });
-  const formats = useRef(["rgba"]);
+  const formats = useRef<COLOR_FORMATS[]>(["rgba"]);
 
   const handleChange = useCallback(({ colors }) => {
     setColor({ ...colors.rgba });
   }, []);
 
-
   return (
-      <ColorPicker
-        spectrum="hsva"
-        formats={formats.current}
-        initialColor={color}
-        onPanStart={handleChange}
-        onPan={handleChange}
-      />
+    <ColorPicker
+      spectrum="hsva"
+      formats={formats.current}
+      initialColor={color}
+      onPanStart={handleChange}
+      onPan={handleChange}
+    />
   );
-
 }
-
 ```
 
 ## Props
@@ -67,7 +65,7 @@ function App() {
 
 ## Change Events
 
-`onPanStart`, `onPan`, and `onPanEnd` all return an object containing the colors specified in the `formats` prop, and the `id` of the spectrum or slider that was panned with.
+`onPanStart`, `onPan`, and `onPanEnd` all return an object containing the colors specified in the `formats` prop, and the `id` of the spectrum or slider that was panned with. Note: make sure to wrap handlers in `useCallback`.
 
 ```
 {
@@ -76,6 +74,36 @@ function App() {
 }
 ```
 
-## Advanced Usage
+## `setColor`
 
-See: https://codesandbox.io/s/react-canvas-color-picker-q4heh?file=/src/App.tsx:1280-1429
+Sometimes you'll want to set the color of the color picker after it's been mounted (imagine changing a hex input, or clicking a color swatch). For this use case there is a `setColor` method which can be access by passing a ref to the color picker.
+
+```
+import React, { useRef } from "react";
+import { ColorPicker, SET_COLOR } from "react-canvas-color-picker";
+
+export default function App() {
+  const colorPickerRef = useRef<SET_COLOR>();
+
+  const setRandomColor = () => {
+    const newColor = {
+      r: Math.random() * 255,
+      g: Math.random() * 255,
+      b: Math.random() * 255,
+      a: 1
+    };
+    colorPickerRef.current?.setColor(newColor);
+  };
+
+  return (
+    <>
+      <ColorPicker ref={colorPickerRef} />
+      <button onClick={setRandomColor}>Random Color</button>
+    </>
+  );
+}
+```
+
+## Advanced Example
+
+### See: https://codesandbox.io/s/react-canvas-color-picker-q4heh?file=/src/App.tsx:1280-1429

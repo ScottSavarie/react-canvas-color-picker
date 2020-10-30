@@ -48,3 +48,7 @@ export type PAN_EVENT = {
   dpi: number;
   elementId: string;
 };
+
+export type SET_COLOR = {
+  setColor(color: COLOR): void;
+};
