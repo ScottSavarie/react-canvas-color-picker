@@ -7,8 +7,8 @@ import { formatColorBySpectrum } from "../../utils";
 import { COLOR_PICKER_CLASSNAME } from "../../constants";
 import { HSLA } from "../../types";
 
-const styles = require("./Alpha.module.css");
-const baseStyles = require("../ColorPicker/ColorPicker.module.css");
+import styles from "./Alpha.module.css";
+import baseStyles from "../ColorPicker/ColorPicker.module.css";
 
 type AlphaProps = {
   hue: number;

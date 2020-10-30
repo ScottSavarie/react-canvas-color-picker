@@ -25,7 +25,7 @@ import {
   COLORS,
 } from "../../types/index";
 
-const styles = require("./ColorPicker.module.css");
+import styles from "./ColorPicker.module.css";
 
 type colorPickerChangeEvent = {
   colors: COLORS;

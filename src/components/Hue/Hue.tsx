@@ -4,8 +4,8 @@ import Handle from "../Handle/Handle";
 
 import { COLOR_PICKER_CLASSNAME } from "../../constants";
 
-const styles = require("./Hue.module.css");
-const baseStyles = require("../ColorPicker/ColorPicker.module.css");
+import styles from "./Hue.module.css";
+import baseStyles from "../ColorPicker/ColorPicker.module.css";
 
 type HueProps = {
   hue: number;

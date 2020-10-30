@@ -6,8 +6,8 @@ import { mapRange } from "../../utils";
 import { HSVA_FORMAT, HSLA_FORMAT } from "../../types";
 import { COLOR_PICKER_CLASSNAME } from "../../constants";
 
-const styles = require("./Spectrum.module.css");
-const baseStyles = require("../ColorPicker/ColorPicker.module.css");
+import styles from "./Spectrum.module.css";
+import baseStyles from "../ColorPicker/ColorPicker.module.css";
 
 type ColorBoxProps = {
   spectrumFormat: HSVA_FORMAT | HSLA_FORMAT;

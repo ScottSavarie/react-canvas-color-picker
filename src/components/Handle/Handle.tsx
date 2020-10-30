@@ -4,7 +4,7 @@ import { HSLA_FORMAT, HSVA_FORMAT, HSLA } from "../../types";
 
 import { formatColorBySpectrum } from "../../utils";
 
-const styles = require("./Handle.module.css");
+import styles from "./Handle.module.css";
 
 type HandleProps = {
   x: number;
@@ -28,7 +28,7 @@ function Handle(props: HandleProps) {
     value = 1,
     alpha = 1,
     lightness = 0.5,
-    className
+    className,
   } = props;
   const dpi = window.devicePixelRatio || 1;
 
@@ -38,14 +38,14 @@ function Handle(props: HandleProps) {
           h: hue,
           s: saturation,
           l: lightness,
-          a: alpha
+          a: alpha,
         }
       : (formatColorBySpectrum(
           {
             h: hue,
             s: saturation,
             v: value,
-            a: alpha
+            a: alpha,
           },
           "hsla"
         ) as HSLA);
@@ -54,14 +54,17 @@ function Handle(props: HandleProps) {
     <div
       className={`${styles.container} ${className}`}
       style={{
-        transform: `translate(-50%, -50%) translate(${x / dpi}px, ${y / dpi}px)`
+        transform: `translate(-50%, -50%) translate(${x / dpi}px, ${
+          y / dpi
+        }px)`,
       }}
     >
       <div
         className={styles.handle}
         style={{
-          backgroundColor: `hsla(${bgColor.h}, ${bgColor.s *
-            100}%, ${bgColor.l * 100}%, ${bgColor.a})`
+          backgroundColor: `hsla(${bgColor.h}, ${bgColor.s * 100}%, ${
+            bgColor.l * 100
+          }%, ${bgColor.a})`,
         }}
       />
     </div>
