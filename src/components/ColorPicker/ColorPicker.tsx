@@ -21,7 +21,7 @@ import {
   HSVA,
   Color,
   ColorFormats,
-  Spectrum,
+  ColorPickerSpectrum,
   Colors,
 } from "../../types/index";
 
@@ -72,7 +72,7 @@ const ColorPicker = React.forwardRef((props: ColorPickerProps, ref) => {
     onPanEnd,
   } = props;
 
-  const [color, setColor] = React.useState<Spectrum>(() => {
+  const [color, setColor] = React.useState<ColorPickerSpectrum>(() => {
     return formatColorBySpectrum(initialColor, spectrum);
   });
 
