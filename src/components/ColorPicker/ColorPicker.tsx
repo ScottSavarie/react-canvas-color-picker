@@ -45,6 +45,7 @@ type ColorPickerProps = {
   hueClasses?: string; // classes for hue slider container
   alphaClasses?: string; // classes for alpha slider container
   handleClasses?: string; // classes for handles
+  hideAlpha?: boolean; // show or hide alpha - default false
   onPanStart?: (event: colorPickerChangeEvent) => void; // Callback function - Note: useCallback to avoid rerenders
   onPan?: (event: colorPickerChangeEvent) => void; // Callback function - Note: useCallback to avoid rerenders
   onPanEnd?: (event: colorPickerChangeEvent) => void; // Callback function - Note: useCallback to avoid rerenders
@@ -67,6 +68,7 @@ const ColorPicker = React.forwardRef((props: ColorPickerProps, ref) => {
     hueClasses,
     alphaClasses,
     handleClasses,
+    hideAlpha = false,
     onPanStart,
     onPan,
     onPanEnd,
@@ -198,18 +200,20 @@ const ColorPicker = React.forwardRef((props: ColorPickerProps, ref) => {
         className={hueClasses}
         handleClasses={handleClasses}
       />
-      <Alpha
-        hue={color.h}
-        saturation={color.s}
-        lightness={color.l}
-        value={color.v}
-        alpha={color.a}
-        width={sliderWidth}
-        spectrum={spectrumRef.current}
-        height={sliderHeight}
-        className={alphaClasses}
-        handleClasses={handleClasses}
-      />
+      {!hideAlpha && (
+        <Alpha
+          hue={color.h}
+          saturation={color.s}
+          lightness={color.l}
+          value={color.v}
+          alpha={color.a}
+          width={sliderWidth}
+          spectrum={spectrumRef.current}
+          height={sliderHeight}
+          className={alphaClasses}
+          handleClasses={handleClasses}
+        />
+      )}
     </div>
   );
 });
