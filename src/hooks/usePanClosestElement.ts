@@ -1,7 +1,7 @@
 import { useLayoutEffect, useRef } from "react";
 import { getRelativeCoords } from "../utils/index";
 
-import { BOUNDS } from "../types/index";
+import { Bounds } from "../types/index";
 
 type panEvent = {
   panX: number;
@@ -35,7 +35,7 @@ export default function usePanClosestElement({
     const dpi = window.devicePixelRatio || 1;
     let isPanning = false;
     let elementId: string | null = null;
-    let bounds: BOUNDS | null = null;
+    let bounds: Bounds | null = null;
 
     if (canvases.current.length === 0) {
       canvases.current = document.getElementsByClassName(className);

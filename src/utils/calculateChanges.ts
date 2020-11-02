@@ -1,4 +1,4 @@
-import { PAN_EVENT } from "../types/index";
+import { PanEvent } from "../types/index";
 
 import {
   calculateSV,
@@ -7,7 +7,7 @@ import {
   calculateAlpha,
 } from "./index";
 
-export default function calculateChanges(panEvent: PAN_EVENT) {
+export default function calculateChanges(panEvent: PanEvent) {
   const { panX, panY, width, height, dpi, elementId } = panEvent;
   let changes = {};
   switch (elementId) {
