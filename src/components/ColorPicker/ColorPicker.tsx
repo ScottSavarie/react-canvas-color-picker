@@ -148,7 +148,7 @@ const ColorPicker = React.forwardRef((props: ColorPickerProps, ref) => {
   );
 
   usePanClosestElement({
-    className: COLOR_PICKER_CLASSNAME,
+    className: className || COLOR_PICKER_CLASSNAME,
     onPanStart: handlePanStart,
     onPan: handlePan,
     onPanEnd: handlePanEnd,
