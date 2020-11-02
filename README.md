@@ -59,6 +59,7 @@ export default function App() {
 | `hueClasses`      | no       | `string`                                   | `undefined`                        | Additional classes for hue slider container           |
 | `alphaClasses`    | no       | `string`                                   | `undefined`                        | Additional classes for alpha slider container         |
 | `handleClasses`   | no       | `string`                                   | `undefined`                        | Additional classes for slider and spectrum handles    |
+| `hideAlpha`       | no       | `boolean`                                  | `false`                            | Removes the alpha selector                            |
 | `onPanStart`      | no       | `(event: colorPickerChangeEvent) => void`  | `undefined`                        | Callback function when pan starts                     |
 | `onPan`           | no       | `(event: colorPickerChangeEvent) => void`  | `undefined`                        | Callback function on pan                              |
 | `onPanEnd`        | no       | `(event: colorPickerChangeEvent) => void`  | `undefined`                        | Callback function when pan ends                       |
