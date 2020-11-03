@@ -74,8 +74,12 @@ const ColorPicker = React.forwardRef((props: ColorPickerProps, ref) => {
     onPanEnd,
   } = props;
 
-  const [color, setColor] = React.useState<ColorPickerSpectrum>(() => {
-    return formatColorBySpectrum(initialColor, spectrum);
+  const [color, setColor] = React.useState<ColorPickerSpectrum>({
+    h: 0,
+    s: 0,
+    l: 0,
+    v: 0,
+    a: 0,
   });
 
   const isFirstRender = React.useRef(true);
@@ -158,6 +162,9 @@ const ColorPicker = React.forwardRef((props: ColorPickerProps, ref) => {
   React.useEffect(() => {
     setColor((state) => {
       if (typeof spectrum !== "undefined") {
+        if (isFirstRender.current) {
+          return formatColorBySpectrum(initialColor, spectrum);
+        }
         return formatColorBySpectrum(state as Color, spectrum);
       }
       return state;
