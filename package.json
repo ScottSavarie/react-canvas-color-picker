@@ -1,6 +1,6 @@
 {
   "name": "react-canvas-color-picker",
-  "version": "1.0.19",
+  "version": "1.0.20",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "files": [
@@ -20,6 +20,9 @@
     "build": "tsc",
     "postbuild": "cpy **/* **/*.module.css ../dist --cwd=src --no-overwrite --parents",
     "prepare": "npm run build"
+  },
+  "dependencies": {
+    "tinycolor2": "1.4.1"
   },
   "devDependencies": {
     "@types/node": "14.0.1",
