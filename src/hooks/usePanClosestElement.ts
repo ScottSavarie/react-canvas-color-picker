@@ -42,6 +42,7 @@ export default function usePanClosestElement({
     }
 
     function handleDown(event: any) {
+      event.stopPropagation();
       const { clientX, clientY, target } = event;
       isPanning = true;
       if (target) {
@@ -56,6 +57,7 @@ export default function usePanClosestElement({
     }
 
     function handleMove(event: any) {
+      event.stopPropagation();
       if (elementId && isPanning && onPan && bounds) {
         const { clientX, clientY } = event;
         const { top, left, width, height } = bounds;
@@ -65,6 +67,7 @@ export default function usePanClosestElement({
     }
 
     function handleUp(event: any) {
+      event.stopPropagation();
       if (elementId && isPanning && onPanEnd && bounds) {
         const { clientX, clientY } = event;
         const { top, left, width, height } = bounds;
